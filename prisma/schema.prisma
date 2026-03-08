@@ -1,0 +1,41 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Text {
+  id              Int      @id @default(autoincrement())
+  stableTextId    String   @unique
+  parentId        Int?
+  parent          Text?    @relation("TextHierarchy", fields: [parentId], references: [id])
+  children        Text[]   @relation("TextHierarchy")
+  title           String
+  slug            String
+  fullPath        String   @unique
+  tradition       String
+  tier            String
+  genre           String?
+  sourceUrl       String?
+  bodyHtml        String?
+  bodyText        String?
+  rightsStatus    String?
+  ingestStatus    String
+  hierarchyLevel  Int
+  alternateTitles String?
+  estimatedDate   String?
+  citationUnit    String?
+  citationExample String?
+  summary         String?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  @@index([slug])
+  @@index([tradition])
+  @@index([tier])
+  @@index([parentId])
+  @@map("texts")
+}

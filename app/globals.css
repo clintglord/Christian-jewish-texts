@@ -1,0 +1,147 @@
+:root {
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  background: #f7f4ee;
+  color: #1f1f1f;
+}
+
+.site-header {
+  border-bottom: 1px solid #d7d2c8;
+  background: #fffaf2;
+}
+
+.site-nav {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 12px 16px;
+  display: flex;
+  gap: 20px;
+  font-weight: 700;
+}
+
+a {
+  color: #184a7a;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 24px 16px 40px;
+}
+
+.panel {
+  background: #fff;
+  border: 1px solid #d7d2c8;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.meta {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 8px 12px;
+}
+
+.tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 99px;
+  border: 1px solid #a79f91;
+  font-size: 12px;
+  margin-right: 6px;
+}
+
+.breadcrumbs {
+  margin-top: 0;
+  margin-bottom: 12px;
+  color: #4d4d4d;
+}
+
+.controls-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.controls-grid label {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+
+.control-input {
+  width: 100%;
+  border: 1px solid #c7bfb1;
+  border-radius: 6px;
+  padding: 8px;
+  background: #fff;
+  font: inherit;
+}
+
+.nav-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.tracker-split {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.tracker-jump {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #fff9ef;
+}
+
+.tracker-tier {
+  margin-bottom: 16px;
+}
+
+.tracker-tier h4 {
+  margin-bottom: 8px;
+}
+
+.tracker-signals {
+  margin-left: 8px;
+}
+
+@media (max-width: 760px) {
+  .controls-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .site-nav {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .meta {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-row {
+    flex-direction: column;
+  }
+
+  .tracker-split {
+    grid-template-columns: 1fr;
+  }
+}

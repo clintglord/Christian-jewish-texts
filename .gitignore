@@ -1,0 +1,11 @@
+node_modules
+.next
+.env
+.codex-tmp
+.claude
+*.log
+*.zip
+desktop.ini
+*.json
+!package-lock.json
+!tsconfig.json
