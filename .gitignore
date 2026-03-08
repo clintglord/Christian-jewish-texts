@@ -7,5 +7,9 @@ node_modules
 *.zip
 desktop.ini
 *.json
+!package.json
 !package-lock.json
 !tsconfig.json
+qa/runs/
+qa/issues-log.csv
+qa/state.json
