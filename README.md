@@ -28,12 +28,26 @@
 ## Run launch workflow
 1. Import:
    - `npm run import`
-2. Build:
+2. Stage 1 QA run (default auto mode):
+   - `npm run qa:stage1`
+   - Optional flags:
+     - `-- --batch-size 25`
+     - `-- --mode auto|random|sequential`
+     - `-- --reviewer "Name"`
+     - `-- --base-url http://localhost:3001`
+     - `-- --seed 12345`
+     - `-- --no-source-check`
+3. Build:
    - `npm run build`
-3. Serve locally:
+4. Serve locally:
    - `npm run dev`
 
 ## Notes
 - Launch does not depend on PostgreSQL full-text search.
 - Importer treats remote text-fetch failures as non-fatal; metadata pages still publish.
 - For mapped Bible books, importer reads chapter HTML from `WEB_LOCAL_HTML_DIR` first, then falls back to remote.
+- Stage 1 QA outputs:
+  - Run reports: `qa/runs/<run_id>/report.md`
+  - Run issue CSV: `qa/runs/<run_id>/issues.csv`
+  - Master issue log: `qa/issues-log.csv`
+  - State file (batch sequencing): `qa/state.json`
